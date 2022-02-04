@@ -38,8 +38,8 @@ final class CentralController: Mediator {
         case .angleChanged:
             let pitchValue = pitchAngleSensor.value
             systemLogger.log(pitch: pitchValue)
-            guard pitchValue > 3 else {
-                print("Stabilization is not needed!")
+            guard pitchValue > 0 else {
+                print("Stabilization is not needed!\n")
                 return
             }
             bodyStabilizer.stabilize()
